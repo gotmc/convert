@@ -11,9 +11,9 @@ import (
 	"strings"
 )
 
-// StringToFloats uses the given separator to split a string into the
+// StringToNFloats uses the given separator to split a string into the
 // expected number of floats.
-func StringToFloats(s, sep string, numExpected int) ([]float64, error) {
+func StringToNFloats(s, sep string, numExpected int) ([]float64, error) {
 	slice := strings.Split(s, sep)
 	if len(slice) != numExpected {
 		return nil, fmt.Errorf(
@@ -21,6 +21,26 @@ func StringToFloats(s, sep string, numExpected int) ([]float64, error) {
 		)
 	}
 	nums := make([]float64, numExpected)
+	for i, s := range slice {
+		num, err := strconv.ParseFloat(strings.TrimSpace(s), 64)
+		if err != nil {
+			return nil, fmt.Errorf("error converting %s to float64", s)
+		}
+		nums[i] = num
+	}
+	return nums, nil
+}
+
+// StringToFloats uses the given separator to split a string into an unknown
+// number of floats.
+func StringToFloats(s, sep string) ([]float64, error) {
+	slice := strings.Split(s, sep)
+	if len(slice) < 1 {
+		return nil, fmt.Errorf(
+			"error splitting the given string: %s", s,
+		)
+	}
+	nums := make([]float64, len(slice))
 	for i, s := range slice {
 		num, err := strconv.ParseFloat(strings.TrimSpace(s), 64)
 		if err != nil {

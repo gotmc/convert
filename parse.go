@@ -5,5 +5,4 @@
 
 // Package parse provides varous functions to help parsing differents types of
 // inputs into different types of outputs.
-//
 package parse
