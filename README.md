@@ -1,6 +1,7 @@
-# parse
+# convert
 
-Go library to help with parsing.
+Go library to help with converting from one type to another. (Formerly called
+parse, but renamed to not conflict with the Go standard library.)
 
 [![GoDoc][godoc badge]][godoc link]
 [![Go Report Card][report badge]][report card]
@@ -33,14 +34,14 @@ $ make cover
 
 ## License
 
-[parse][] is released under the MIT license. Please see the
+[convert][] is released under the MIT license. Please see the
 [LICENSE.txt][] file for more information.
 
-[parse]: https://github.com/gotmc/parse
-[godoc badge]: https://pkg.go.dev/badge/github.com/gotmc/parse
-[godoc link]: https://pkg.go.dev/github.com/gotmc/parse
-[LICENSE.txt]: https://github.com/gotmc/parse/blob/master/LICENSE.txt
+[convert]: https://github.com/gotmc/convert
+[godoc badge]: https://pkg.go.dev/badge/github.com/gotmc/convert
+[godoc link]: https://pkg.go.dev/github.com/gotmc/convert
+[LICENSE.txt]: https://github.com/gotmc/convert/blob/master/LICENSE.txt
 [license badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
-[report badge]: https://goreportcard.com/badge/github.com/gotmc/parse
-[report card]: https://goreportcard.com/report/github.com/gotmc/parse
+[report badge]: https://goreportcard.com/badge/github.com/gotmc/convert
+[report card]: https://goreportcard.com/report/github.com/gotmc/convert

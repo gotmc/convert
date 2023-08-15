@@ -1,3 +1,3 @@
-module github.com/gotmc/parse
+module github.com/gotmc/convert
 
 go 1.20
