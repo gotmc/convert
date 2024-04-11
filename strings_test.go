@@ -83,3 +83,34 @@ func TestStringNFloats(t *testing.T) {
 		}
 	}
 }
+
+func TestStripDoubleQuotes(t *testing.T) {
+	testCases := []struct {
+		given    string
+		expected string
+	}{
+		{
+			given:    "\"0.001,0.002\"",
+			expected: "0.001,0.002",
+		},
+		{
+			given:    "\"0.001,0.002\"\n",
+			expected: "0.001,0.002",
+		},
+		{
+			given:    "\"foo,bash\"\n",
+			expected: "foo,bash",
+		},
+	}
+	for _, tc := range testCases {
+		got := StripDoubleQuotes(tc.given)
+		if got != tc.expected {
+			t.Errorf(
+				"given %s / expected = %s / got = %s",
+				tc.given,
+				tc.expected,
+				got,
+			)
+		}
+	}
+}

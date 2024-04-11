@@ -14,6 +14,7 @@ import (
 // StripDoubleQuotes will strip double quotes at the beginning and end of a
 // string.
 func StripDoubleQuotes(s string) string {
+	s = strings.TrimSpace(s)
 	s = strings.TrimPrefix(s, "\"")
 	return strings.TrimSuffix(s, "\"")
 }
