@@ -6,15 +6,8 @@
 package convert
 
 import (
-	"math"
 	"testing"
 )
-
-const tolerance = 0.0000000001
-
-func almostEqual(f1, f2 float64) bool {
-	return math.Abs(f1-f2) < tolerance
-}
 
 func TestStringFloats(t *testing.T) {
 	testCases := []struct {
