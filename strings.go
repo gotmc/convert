@@ -1,4 +1,4 @@
-// Copyright (c) 2023 The convert developers. All rights reserved.
+// Copyright (c) 2023–2024 The convert developers. All rights reserved.
 // Project site: https://github.com/gotmc/convert
 // Use of this source code is governed by a MIT-style license that
 // can be found in the LICENSE.txt file for the project.
@@ -10,6 +10,13 @@ import (
 	"strconv"
 	"strings"
 )
+
+// StripDoubleQuotes will strip double quotes at the beginning and end of a
+// string.
+func StripDoubleQuotes(s string) string {
+	s = strings.TrimPrefix(s, "\"")
+	return strings.TrimSuffix(s, "\"")
+}
 
 // StringToNFloats uses the given separator to split a string into the
 // expected number of floats.

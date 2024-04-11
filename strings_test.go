@@ -1,4 +1,4 @@
-// Copyright (c) 2023 The convert developers. All rights reserved.
+// Copyright (c) 2023–2024 The convert developers. All rights reserved.
 // Project site: https://github.com/gotmc/convert
 // Use of this source code is governed by a MIT-style license that
 // can be found in the LICENSE.txt file for the project.
@@ -40,7 +40,13 @@ func TestStringFloats(t *testing.T) {
 		}
 		for i, calc := range calcs {
 			if calc != tc.expected[i] {
-				t.Errorf("given %s / index %d expected = %f / calculated = %f", tc.given, i, tc.expected[i], calc)
+				t.Errorf(
+					"given %s / index %d expected = %f / calculated = %f",
+					tc.given,
+					i,
+					tc.expected[i],
+					calc,
+				)
 			}
 		}
 	}
@@ -73,7 +79,13 @@ func TestStringNFloats(t *testing.T) {
 		}
 		for i, calc := range calcs {
 			if calc != tc.expected[i] {
-				t.Errorf("given %s / index %d expected = %f / calculated = %f", tc.given, i, tc.expected[i], calc)
+				t.Errorf(
+					"given %s / index %d expected = %f / calculated = %f",
+					tc.given,
+					i,
+					tc.expected[i],
+					calc,
+				)
 			}
 		}
 	}
