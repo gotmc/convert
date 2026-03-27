@@ -7,7 +7,6 @@ parse, but renamed to not conflict with the Go standard library.)
 [![Go Report Card][report badge]][report card]
 [![License Badge][license badge]][LICENSE.txt]
 
-
 ## Contributing
 
 Contributions are welcome! To contribute please:
@@ -17,19 +16,23 @@ Contributions are welcome! To contribute please:
 3. Code
 4. Submit a [pull request][]
 
+### Development Dependencies
+
+- [just][] - task runner that replaces [GNU Make][make]
 
 ### Testing
 
 Prior to submitting a [pull request][], please run:
 
 ```bash
-$ make check
+$ just check
+$ just lint
 ```
 
 To update and view the test coverage report:
 
 ```bash
-$ make cover
+$ just cover
 ```
 
 ## License
@@ -40,8 +43,10 @@ $ make cover
 [convert]: https://github.com/gotmc/convert
 [godoc badge]: https://pkg.go.dev/badge/github.com/gotmc/convert
 [godoc link]: https://pkg.go.dev/github.com/gotmc/convert
+[just]: https://just.systems/
 [LICENSE.txt]: https://github.com/gotmc/convert/blob/master/LICENSE.txt
 [license badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[make]: https://www.gnu.org/software/make/manual/make.html
 [pull request]: https://help.github.com/articles/using-pull-requests
 [report badge]: https://goreportcard.com/badge/github.com/gotmc/convert
 [report card]: https://goreportcard.com/report/github.com/gotmc/convert

@@ -22,37 +22,26 @@ func StripDoubleQuotes(s string) string {
 // StringToNFloats uses the given separator to split a string into the
 // expected number of floats.
 func StringToNFloats(s, sep string, numExpected int) ([]float64, error) {
-	slice := strings.Split(s, sep)
-	if len(slice) != numExpected {
+	floats, err := StringToFloats(s, sep)
+	if err != nil {
+		return nil, err
+	}
+	if len(floats) != numExpected {
 		return nil, fmt.Errorf(
-			"error: didn't split into number expected given string: %s", s,
+			"got %d floats, want %d for string: %s", len(floats), numExpected, s,
 		)
 	}
-	nums := make([]float64, numExpected)
-	for i, s := range slice {
-		num, err := strconv.ParseFloat(strings.TrimSpace(s), 64)
-		if err != nil {
-			return nil, fmt.Errorf("error converting %s to float64", s)
-		}
-		nums[i] = num
-	}
-	return nums, nil
+	return floats, nil
 }
 
-// StringToFloats uses the given separator to split a string into an unknown
-// number of floats.
+// StringToFloats uses the given separator to split a string into floats.
 func StringToFloats(s, sep string) ([]float64, error) {
-	slice := strings.Split(s, sep)
-	if len(slice) < 1 {
-		return nil, fmt.Errorf(
-			"error splitting the given string: %s", s,
-		)
-	}
-	nums := make([]float64, len(slice))
-	for i, s := range slice {
-		num, err := strconv.ParseFloat(strings.TrimSpace(s), 64)
+	parts := strings.Split(s, sep)
+	nums := make([]float64, len(parts))
+	for i, part := range parts {
+		num, err := strconv.ParseFloat(strings.TrimSpace(part), 64)
 		if err != nil {
-			return nil, fmt.Errorf("error converting %s to float64", s)
+			return nil, fmt.Errorf("converting %q to float64: %w", part, err)
 		}
 		nums[i] = num
 	}

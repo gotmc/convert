@@ -3,6 +3,6 @@
 // Use of this source code is governed by a MIT-style license that
 // can be found in the LICENSE.txt file for the project.
 
-// Package convert provides varous functions to help parsing differents types of
+// Package convert provides various functions to help parsing different types of
 // inputs into different types of outputs.
 package convert
